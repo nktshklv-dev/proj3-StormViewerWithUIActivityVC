@@ -24,6 +24,8 @@ class ViewController: UITableViewController {
             }
         }
         print(images)
+        title = "Storm Viewer"
+        
     }
     
     

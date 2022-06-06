@@ -23,6 +23,7 @@
 		1139B70D284E9BAC0091571B /* nssl0043.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1139B703284E9BAC0091571B /* nssl0043.jpg */; };
 		1139B70E284E9BAC0091571B /* nssl0033.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1139B704284E9BAC0091571B /* nssl0033.jpg */; };
 		1139B70F284E9BAC0091571B /* nssl0034.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1139B705284E9BAC0091571B /* nssl0034.jpg */; };
+		1139B711284EA23E0091571B /* PictureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1139B710284EA23E0091571B /* PictureViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		1139B703284E9BAC0091571B /* nssl0043.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = nssl0043.jpg; sourceTree = "<group>"; };
 		1139B704284E9BAC0091571B /* nssl0033.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = nssl0033.jpg; sourceTree = "<group>"; };
 		1139B705284E9BAC0091571B /* nssl0034.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = nssl0034.jpg; sourceTree = "<group>"; };
+		1139B710284EA23E0091571B /* PictureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 				1139B6E7284E9AB80091571B /* AppDelegate.swift */,
 				1139B6E9284E9AB80091571B /* SceneDelegate.swift */,
 				1139B6EB284E9AB80091571B /* ViewController.swift */,
+				1139B710284EA23E0091571B /* PictureViewController.swift */,
 				1139B6ED284E9AB80091571B /* Main.storyboard */,
 				1139B6F0284E9AB90091571B /* Assets.xcassets */,
 				1139B6F2284E9AB90091571B /* LaunchScreen.storyboard */,
@@ -187,6 +190,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1139B6EC284E9AB80091571B /* ViewController.swift in Sources */,
+				1139B711284EA23E0091571B /* PictureViewController.swift in Sources */,
 				1139B6E8284E9AB80091571B /* AppDelegate.swift in Sources */,
 				1139B6EA284E9AB80091571B /* SceneDelegate.swift in Sources */,
 			);
