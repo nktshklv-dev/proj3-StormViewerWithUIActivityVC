@@ -9,7 +9,13 @@ import UIKit
 
 class ViewController: UITableViewController {
     
-    var images: [String] = []
+    var images: [String] = []{
+        didSet{
+            images = images.sorted(by: {
+                s1, s2 in s1.prefix(8) < s2.prefix(8)
+            })
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,7 +31,7 @@ class ViewController: UITableViewController {
         }
         print(images)
         title = "Storm Viewer"
-        
+        navigationController?.navigationBar.prefersLargeTitles = true
     }
     
     
@@ -38,6 +44,18 @@ class ViewController: UITableViewController {
         
         cell.textLabel?.text = images[indexPath.row]
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+      let storyB = UIStoryboard(name: "Main", bundle: nil)
+        
+        let vc = storyB.instantiateViewController(withIdentifier: "Image") as! PictureViewController
+        
+        vc.currentImage = images[indexPath.row]
+        vc.images = self.images
+        navigationController?.pushViewController(vc, animated: true)
+        
+       
     }
 
 
