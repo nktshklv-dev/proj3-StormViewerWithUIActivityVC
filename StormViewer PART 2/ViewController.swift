@@ -32,6 +32,7 @@ class ViewController: UITableViewController {
         print(images)
         title = "Storm Viewer"
         navigationController?.navigationBar.prefersLargeTitles = true
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(recommendTheApp))
     }
     
     
@@ -56,6 +57,12 @@ class ViewController: UITableViewController {
         navigationController?.pushViewController(vc, animated: true)
         
        
+    }
+    
+    @objc func recommendTheApp(){
+        let vc = UIActivityViewController(activityItems: ["The storm viewer app is the coolest one! Go now and download it from the AppStore. "], applicationActivities: [])
+        vc.popoverPresentationController?.barButtonItem = navigationItem.rightBarButtonItem
+        present(vc, animated: true, completion: nil)
     }
 
 
