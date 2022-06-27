@@ -19,20 +19,23 @@ class ViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        let fm = FileManager.default
-        let path = Bundle.main.resourcePath
-        let pictures = try! fm.contentsOfDirectory(atPath: path!)
-        
-        for picture in pictures{
-            if picture.hasPrefix("nssl"){
-                
-                images.append(picture)
+        DispatchQueue.global(qos: .userInitiated).async { [weak self] in
+            let fm = FileManager.default
+            let path = Bundle.main.resourcePath
+            let pictures = try! fm.contentsOfDirectory(atPath: path!)
+            
+            for picture in pictures{
+                if picture.hasPrefix("nssl"){
+                    
+                    self?.images.append(picture)
+                }
             }
         }
-        print(images)
-        title = "Storm Viewer"
-        navigationController?.navigationBar.prefersLargeTitles = true
-        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(recommendTheApp))
+        DispatchQueue.main.async { [weak self] in
+            self?.title = "Storm Viewer"
+            self?.navigationController?.navigationBar.prefersLargeTitles = true
+            self?.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(self?.recommendTheApp))
+        }
     }
     
     
@@ -54,6 +57,7 @@ class ViewController: UITableViewController {
         
         vc.currentImage = images[indexPath.row]
         vc.images = self.images
+        
         navigationController?.pushViewController(vc, animated: true)
         
        
